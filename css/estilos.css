@@ -4,11 +4,16 @@
   box-sizing: border-box;
   font-family: 'Josefin Sans', sans-serif; }
 
-body {
+body.body {
   height: 100vh; }
 
-.body {
+main {
   background-color: #242424; }
+  body.modo_claro main {
+    background-color: #E7E5E5; }
+
+:root {
+  --rojo: #881433; }
 
 .fondo {
   height: 100vw;

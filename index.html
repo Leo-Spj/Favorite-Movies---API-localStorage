@@ -4,11 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Safari Webkit -->
+    <meta  name="theme-color" content="#242424">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com"> 
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;700&display=swap" rel="stylesheet">
+
+    <!-- Boxicons -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 
     <!--Mis CSS -->
     <link rel="stylesheet" href="css/estilos.css">
@@ -18,7 +23,7 @@
 
     <title>CoderPelis</title>
 </head>
-<body>
+<body class="body">
 
     <header>
 
@@ -32,24 +37,42 @@
             <div class="container sec_1"></div>
 
             <div class="container sec_2">
+                
                 <h1 class="logo_texto">
-                    <strong>CoderPelis</strong> </h1>
+                    <strong>CoderPelis</strong>
+                </h1>
+
+                <button class=" switch modo_oscuro_claro" id="switch">
+                    <span><i class='bx bx-sun bx-rotate-90' ></i></span>
+                    <p></p>
+                    <span><i class='bx bx-moon' ></i></span>
+
+                </button>
+
             </div>
 
             <div class="row sec_3">
 
-                <div class="col-1"></div>
+                <div class="col"></div>
                 
-                <div class="col-10">
+                <div class="col-9 seccion_busqueda">
                     <input type="text" name="" id="" class="buscar_input" placeholder="Buscar...">
+                    
+                    <i class='bx bx-search bx-rotate-90' ></i>
+                    
                 </div>
 
-                <div class="col-1"></div>
+                <div class="col"></div>
             </div>
 
             <div class="container sec_4"></div>
            
         </div>
+        
+        <div class="container seccion_peliculas_api">
+
+        </div>
+        
 
 
 

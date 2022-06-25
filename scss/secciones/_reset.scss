@@ -5,13 +5,14 @@
 
     font-family: 'Josefin Sans', sans-serif;
 }
-body.body{
-    height: 100vh;
-}
+
 main{    
+    min-height: 100vh;
     background-color: #242424; 
     body.modo_claro &{
         background-color: #E7E5E5;
     }
 }
+
+
 

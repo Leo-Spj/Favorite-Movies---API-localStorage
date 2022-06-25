@@ -48,5 +48,4 @@ const modo = document.querySelector("#switch");
 modo.onclick =function(){
     document.body.classList.toggle("modo_claro");
     modo.classList.toggle("activo")
-
 } 

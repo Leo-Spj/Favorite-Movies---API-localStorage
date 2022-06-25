@@ -8,17 +8,3 @@
     
 }
 
-.seccion_busqueda{
-    position: relative;
-}
-
-.bx-search{
-    font-size: 30px;
-    color: white;
-    position: absolute;
-    top:10px;
-    left: 18px;
-    body.modo_claro &{
-        color: $negro_claro_2
-    }
-}

@@ -13,6 +13,26 @@ main {
 :root {
   --rojo: #881433; }
 
+.nana {
+  height: 300px;
+  background-color: blue; }
+
+.nene {
+  height: 300px;
+  background-color: red; }
+
+.nini {
+  height: 300px;
+  background-color: green; }
+
+.nono {
+  height: 300px;
+  background-color: wheat; }
+
+.nunu {
+  height: 300px;
+  background-color: chartreuse; }
+
 .fondo {
   height: 100vw;
   min-height: 460px;
@@ -91,10 +111,10 @@ button.switch {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18); }
-  .buscar_input input::placeholder {
-    font-size: 25px;
-    color: #E7E5E5;
-    top: 10px; }
+
+input::placeholder {
+  font-size: 17px;
+  color: #E7E5E5; }
 
 .bx-search {
   position: absolute;
@@ -113,6 +133,21 @@ button.switch {
   border-radius: 10px; }
   .carousel-caption h5 {
     font-size: 22px; }
+
+.titulo_carrusel_destacadas {
+  color: #E7E5E5;
+  font-size: 17px; }
+
+.caja-titulo-carrusel {
+  position: relative;
+  height: 30px;
+  top: 5px; }
+
+div.owl-dots {
+  display: none; }
+
+div.owl-nav {
+  display: none; }
 
 .pseudo-footer {
   min-height: 100px; }

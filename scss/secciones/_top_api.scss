@@ -13,17 +13,30 @@
     -webkit-backdrop-filter: blur( 20px );
     border-radius: 10px;
     
-    
-    
-    
-    
-    
-    
-    
+
     h5{
         font-size: 22px;
+       
     }
-    
-
-
+ 
 }
+
+// OWL carrusel
+.titulo_carrusel_destacadas{
+    color: $humo;
+    font-size: 17px;
+    
+}
+.caja-titulo-carrusel{
+    position: relative;
+    height: 30px;
+    top:5px;
+}
+        div.owl-dots{
+            display: none;
+        }
+        div.owl-nav{
+            display: none;
+        }
+
+

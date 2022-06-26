@@ -5,10 +5,13 @@
 
 // Small devices (landscape phones, 576px and up)
 @media (min-width: 576px) {
+    // bootstrap
     div.carousel-item{
         max-height: 450px;
         position: relative;
     }
+   
+
 }
 
 
@@ -33,3 +36,5 @@
 @media (min-width: 1400px) {
     
 }
+
+

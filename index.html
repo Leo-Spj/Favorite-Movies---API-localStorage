@@ -21,8 +21,9 @@
     <!-- Bootsttrap - CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
-    <!-- Swiper JS - Carrusel-->
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <!-- OWL - Carrusel-->
+    <link rel="stylesheet" href="owl-carrusel-jquery/owl.carousel.min.css">
+    <link rel="stylesheet" href="owl-carrusel-jquery/owl.theme.default.min.css">
 
     <title>CoderPelis</title>
 </head>
@@ -78,11 +79,13 @@
 
         <!-- Seccion peliculas API -->
             
+        <!-- seccion carrusel Bootstrap -->
+       <!-- 
         <div class="d-flex container-xxl seccion_peliculas_api">
 
             <div class="col "></div>
 
-            <div class="col-xxl-9 col-xl-9 col-lg-9 col-md-9 col-md-9 col-sm-9 col-9">
+            <div class=" col-sm-7 col-9">
 
                 <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-indicators">
@@ -94,7 +97,7 @@
 
                       
 
-                        <!-- Aqí datos API -->
+            
                       
                       
 
@@ -116,14 +119,43 @@
 
             
         </div>
+        -->
 
- 
+        
+        <!-- seccion carrusel OWL -jquery -->
 
+        <div class="container-xxl d-flex ">
+            
+            
+            <div class="col-12">
+                <div class="d-flex justify-content-center align-items-center caja-titulo-carrusel">
+                    <h2 class="titulo_carrusel_destacadas"><strong>Peliculas Destacadas</strong></h2>
+                </div>
 
-        <div class="container pseudo-footer"></div>
+                <div id="contenedor_carrusel_owl"></div>
+
+                
+
+            </div>
+            
+
+        </div>
+
+        
         
     
     </main>
+
+
+
+
+
+
+
+    <!-- OWL  para carrusel de peliculas-->
+    <script src="owl-carrusel-jquery/jquery.min.js"></script>
+    <script src="owl-carrusel-jquery/owl.carousel.min.js"></script>
+        
 
 
     <!-- Mi JavaScript -->
@@ -132,6 +164,4 @@
     <!-- Bootstrap - JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
-    <!-- Swiper JS (para el carrusel) -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
 </html>

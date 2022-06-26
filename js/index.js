@@ -58,8 +58,12 @@
             console.log(error)
         }
     }
+    var t0 = performance.now();
     cargarPeliculas();
-    
+    var t1 = performance.now();
+    const tiempo = t1-t0
+
+
     class informacion_peliculas {
         
         constructor (nombre, voto_promedio, recuento_votos, poster ){
@@ -125,7 +129,7 @@
         
         });
 
-    }, 2000);
+    }, tiempo + 50);
     
 
 

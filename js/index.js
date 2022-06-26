@@ -129,7 +129,9 @@
         
         });
 
-    }, tiempo + 50);
+    }, tiempo + 100);
+
+    console.log("el timepo es: " +tiempo)
     
 
 

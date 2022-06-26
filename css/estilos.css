@@ -36,7 +36,7 @@ main {
   color: #E7E5E5;
   font-size: 55px; }
   body.modo_claro .logo_texto {
-    color: #404040; }
+    color: #242424; }
 
 button.switch {
   cursor: pointer;
@@ -91,6 +91,10 @@ button.switch {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18); }
+  .buscar_input input::placeholder {
+    font-size: 25px;
+    color: #E7E5E5;
+    top: 10px; }
 
 .bx-search {
   position: absolute;

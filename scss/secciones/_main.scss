@@ -29,9 +29,10 @@
     font-size: 55px;
 
     body.modo_claro &{
-        color: $negro_claro_2
+        color: $negro_claro_1;
     }
 }
+
 
 button.switch{
     cursor: pointer;
@@ -113,8 +114,14 @@ button.switch{
         -webkit-backdrop-filter: blur( 4px );
         border-radius: 10px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
-    
+        
+    input::placeholder{
+        font-size: 25px;
+        color: $humo;
+        top:10px    
+    }
 }
+
 
 .bx-search{
     position: absolute;

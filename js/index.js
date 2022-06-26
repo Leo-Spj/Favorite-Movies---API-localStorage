@@ -16,13 +16,6 @@
 
             // subiendo datos al html:
             
-/*
-
- <td>  ${arry_themoviedb[i].nombre}  </td>
-                <td>  ${arry_themoviedb[i].voto_promedio}  </td>
-                <td>  ${arry_themoviedb[i].recuento_votos}  </td>
-
-*/
             const carrusel_peliculas_api = document.querySelector("#carrusel_peliculas_api");
             for(let i = 0; i < 3; i++ ){
 
@@ -31,7 +24,7 @@
                 if(i === 0){
                     div.classList.add("active");
                 }
-                
+
                     div.classList.add("carousel-item");
                 
                 
@@ -46,7 +39,7 @@
                     <p>${arry_themoviedb[i].voto_promedio}</p>
                 </div>
                 `;
-}
+            }
 
             
             

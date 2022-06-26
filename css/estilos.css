@@ -105,8 +105,19 @@ button.switch {
   body.modo_claro .bx-search {
     color: #404040; }
 
-.sec_4 {
-  height: 80px; }
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 10px; }
+  .carousel-caption h5 {
+    font-size: 22px; }
 
-.seccion_peliculas_api {
-  min-height: 300px; }
+.pseudo-footer {
+  min-height: 100px; }
+
+@media (min-width: 576px) {
+  div.carousel-item {
+    max-height: 450px;
+    position: relative; } }

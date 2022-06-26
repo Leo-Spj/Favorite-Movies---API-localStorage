@@ -1,5 +1,6 @@
 
 
+var t0 = performance.now();
     const cargarPeliculas = async() => {
         try{
             const respuesta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=276e470698d68800db5697223acb8a64&language=es-ES`);
@@ -58,9 +59,9 @@
             console.log(error)
         }
     }
-    var t0 = performance.now();
+    
     cargarPeliculas();
-    var t1 = performance.now();
+var t1 = performance.now();
     const tiempo = t1-t0
 
 
@@ -131,7 +132,7 @@
 
     }, tiempo + 100);
 
-    console.log("el timepo es: " +tiempo)
+    console.log("el timepo es: " +tiempo + "ms")
     
 
 

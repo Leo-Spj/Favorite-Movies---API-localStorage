@@ -1,7 +1,5 @@
 // Por Bootstrap:
 
-// X-Small devices (portrait phones, less than 576px)
-// No media query for `xs` since this is the default in Bootstrap
 
 
 @media(max-width: 420px){
@@ -11,18 +9,20 @@
         max-height: 400px;
         background-repeat: no-repeat;
         background-position: 0px -120px ;
+
+        .sec_1{
+            height: 20px;
+        }
+        .sec_2{
+            height: 275px;
+            position: relative;
+        }
+        .sec_4{
+            height: 30px;
+        }
     }
     
-    .sec_1{
-        height: 20px;
-    }
-    .sec_2{
-        height: 275px;
-        position: relative;
-    }
-    .sec_4{
-        height: 30px;
-    }
+    
 
 }
 

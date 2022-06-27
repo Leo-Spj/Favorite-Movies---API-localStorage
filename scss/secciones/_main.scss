@@ -55,8 +55,8 @@ button.switch{
 
     &::after{
         content: "";
-        height: 33px;
-        width: 33px;
+        height: 32px;
+        width: 32px;
         display: block;
 
         position: absolute;
@@ -64,11 +64,11 @@ button.switch{
         right: -3px;
         left: unset;
 
-
-        border-radius: 150px;
+    // generado por neumorphism:
+        border-radius: 92px;
         background: #e0e0e0;
-        box-shadow: inset -7px -7px 20px #929292,
-        inset 7px 7px 20px #ffffff;
+        box-shadow: inset 6px -6px 12px #8f8f8f,
+                    inset -6px 6px 12px #ffffff;
     }
     &.activo{
         background: $negro_claro_2;
@@ -140,6 +140,4 @@ button.switch{
     }
 }
 
-// .sec_4{
-//     height: 80px;
-// }
+

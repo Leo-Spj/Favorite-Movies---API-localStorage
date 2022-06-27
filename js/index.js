@@ -3,10 +3,13 @@
         try{
 
 var t0 = performance.now();
+
             const respuesta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=276e470698d68800db5697223acb8a64&language=es-ES`);
+
 var t1 = performance.now();
 var tiempo = t1-t0; 
-console.log("el tiempo es: " + tiempo + " .ms")   
+console.log("Tiempo top-carrusel: "+tiempo+"ms")  
+
             console.log(respuesta);
             
             //si la respuesta es correcta:
@@ -15,7 +18,7 @@ console.log("el tiempo es: " + tiempo + " .ms")
     
                 datos.results.forEach(pelicula => {
     
-                    arry_themoviedb.push(new informacion_peliculas(pelicula.title, pelicula.vote_average, pelicula.vote_count, pelicula.poster_path));
+                    top_carrusel_themoviedb.push(new informacion_peliculas(pelicula.title, pelicula.vote_average, pelicula.vote_count, pelicula.poster_path));
     
                 });
     
@@ -41,56 +44,51 @@ console.log("el tiempo es: " + tiempo + " .ms")
     
                     div.innerHTML = `
                         
-                            <img src="https://image.tmdb.org/t/p/w500/${arry_themoviedb[i].poster}" alt="">
+                            <img src="https://image.tmdb.org/t/p/w500/${top_carrusel_themoviedb[i].poster}" alt="">
      
                     `;
                 }
-
-                $(function(){ 
-                    var owl = $('.owl-carousel');
-                    owl.owlCarousel({
-                        
-                        loop:true,
-                        margin:10,
-                        autoplay:true,
-                        nav:true,
-                        autoplayTimeout:3000,
-        
-                        responsive:{
-                            0:{
-                                items:2
-                            },
-                            280:{
-                                items:4
-                            },
-                            
-                            500:{
-                                items:4
-                            },
-                            700:{
-                                items:5
-                            },
-                            900:{
-                                items:6
-                            },
-                            1100:{
-                                items:7
-                            },
-                            1300:{
-                                items:8
-                            }
-                            
-                        }
-                        
-                    });
+            
+            // funcion generada por OWL-carrusel con jquery para animar el carrusel:
+            $(function(){ 
+                var owl = $('.owl-carousel');
+                owl.owlCarousel({
                     
-                
+                    loop:true,
+                    margin:10,
+                    autoplay:true,
+                    nav:true,
+                    autoplayTimeout:3000,
+                    
+                    // mediaQueries:
+                    responsive:{
+                        0:{
+                            items:2
+                        },
+                        280:{
+                            items:4
+                        },
+                        
+                        500:{
+                            items:4
+                        },
+                        700:{
+                            items:5
+                        },
+                        900:{
+                            items:6
+                        },
+                        1100:{
+                            items:7
+                        },
+                        1300:{
+                            items:8
+                        }                        
+                    }                    
                 });
+            });
 
-
-    
-               
-                // tipos de errores:
+            // tipos de errores:
             }else if(respuesta.status === 401){
                 console.log ("llave erronea");
                 
@@ -119,7 +117,7 @@ console.log("el tiempo es: " + tiempo + " .ms")
             this.poster = poster;
         }
     }
-    const arry_themoviedb = [ ];
+    const top_carrusel_themoviedb = [ ];
     
     
     

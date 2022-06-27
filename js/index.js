@@ -1,6 +1,6 @@
 
 
-var t0 = performance.now();
+
 
     async function esperar_tiempo(){
 
@@ -15,8 +15,12 @@ var t0 = performance.now();
 
     const cargarPeliculas = async() => {
         try{
+
+var t0 = performance.now();
             const respuesta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=276e470698d68800db5697223acb8a64&language=es-ES`);
-    
+var t1 = performance.now();
+var tiempo = t1-t0; 
+console.log("el tiempo es: " + tiempo + " .ms")   
             console.log(respuesta);
             
             //si la respuesta es correcta:
@@ -55,6 +59,49 @@ var t0 = performance.now();
      
                     `;
                 }
+
+                $(function(){ 
+                    var owl = $('.owl-carousel');
+                    owl.owlCarousel({
+                        
+                        loop:true,
+                        margin:10,
+                        autoplay:true,
+                        nav:true,
+                        autoplayTimeout:3000,
+        
+                        responsive:{
+                            0:{
+                                items:1
+                            },
+                            280:{
+                                items:2
+                            },
+                            
+                            500:{
+                                items:3
+                            },
+                            700:{
+                                items:4
+                            },
+                            900:{
+                                items:5
+                            },
+                            1100:{
+                                items:6
+                            },
+                            1300:{
+                                items:8
+                            }
+                            
+                        }
+                        
+                    });
+                    
+                
+                });
+
+
     
                
                 // tipos de errores:
@@ -73,8 +120,7 @@ var t0 = performance.now();
     }
     
     cargarPeliculas();
-var t1 = performance.now();
-    const tiempo = t1-t0
+
 
 
     class informacion_peliculas {
@@ -98,7 +144,7 @@ var t1 = performance.now();
     } 
     
    
-    
+    /*
     setTimeout(() => {
 
         $(function(){ 
@@ -143,8 +189,10 @@ var t1 = performance.now();
         });
 
     }, 20000);
+    
+    */
 
-    console.log("el tiempo es: " +tiempo + " .ms")
+    
     
 
 

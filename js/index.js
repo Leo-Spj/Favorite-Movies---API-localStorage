@@ -31,7 +31,7 @@ console.log("el tiempo es: " + tiempo + " .ms")
                 contenedor_carrusel_owl.appendChild(princ_Div);
     
     
-                for(let i = 0; i < 10; i++ ){
+                for(let i = 0; i < 20; i++ ){
     
                     let div = document.createElement("div");               
     
@@ -58,23 +58,23 @@ console.log("el tiempo es: " + tiempo + " .ms")
         
                         responsive:{
                             0:{
-                                items:1
+                                items:2
                             },
                             280:{
-                                items:2
+                                items:4
                             },
                             
                             500:{
-                                items:3
-                            },
-                            700:{
                                 items:4
                             },
-                            900:{
+                            700:{
                                 items:5
                             },
-                            1100:{
+                            900:{
                                 items:6
+                            },
+                            1100:{
+                                items:7
                             },
                             1300:{
                                 items:8

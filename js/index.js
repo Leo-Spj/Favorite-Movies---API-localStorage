@@ -1,18 +1,4 @@
 
-
-
-
-    async function esperar_tiempo(){
-
-        let tiempo = await cargarPeliculas();
-
-
-
-
-
-    }
-
-
     const cargarPeliculas = async() => {
         try{
 
@@ -115,7 +101,8 @@ console.log("el tiempo es: " + tiempo + " .ms")
             }
     
         }catch(error){
-            console.log(error)
+            console.log(error);
+            
         }
     }
     
@@ -144,53 +131,7 @@ console.log("el tiempo es: " + tiempo + " .ms")
     } 
     
    
-    /*
-    setTimeout(() => {
-
-        $(function(){ 
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
-                
-                loop:true,
-                margin:10,
-                autoplay:true,
-                nav:true,
-                autoplayTimeout:3000,
-
-                responsive:{
-                    0:{
-                        items:1
-                    },
-                    280:{
-                        items:2
-                    },
-                    
-                    500:{
-                        items:3
-                    },
-                    700:{
-                        items:4
-                    },
-                    900:{
-                        items:5
-                    },
-                    1100:{
-                        items:6
-                    },
-                    1300:{
-                        items:8
-                    }
-                    
-                }
-                
-            });
-            
-        
-        });
-
-    }, 20000);
     
-    */
 
     
     

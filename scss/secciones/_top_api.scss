@@ -25,6 +25,9 @@
 .titulo_carrusel_destacadas{
     color: $humo;
     font-size: 17px;
+    body.modo_claro &{
+        color: $negro_claro_1;
+    }
     
 }
 .caja-titulo-carrusel{

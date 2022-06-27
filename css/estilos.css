@@ -110,10 +110,8 @@ button.switch {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18); }
-
-input::placeholder {
-  font-size: 17px;
-  color: #E7E5E5; }
+  body.modo_claro .buscar_input {
+    color: #404040; }
 
 .bx-search {
   position: absolute;
@@ -136,6 +134,8 @@ input::placeholder {
 .titulo_carrusel_destacadas {
   color: #E7E5E5;
   font-size: 17px; }
+  body.modo_claro .titulo_carrusel_destacadas {
+    color: #242424; }
 
 .caja-titulo-carrusel {
   position: relative;

@@ -116,19 +116,16 @@ button.switch{
         border-radius: 10px;
         border: 1px solid rgba( 255, 255, 255, 0.18 );
         
-   
-    
-     
+        body.modo_claro &{
+            color: $negro_claro_2
+        }
      
 }
 
-input::placeholder{
-    font-size: 17px;
-    color: $humo;  
-}
-
-
-
+// input::placeholder{
+//     font-size: 17px;
+//     color: $humo;  
+// }
 
 .bx-search{
     position: absolute;

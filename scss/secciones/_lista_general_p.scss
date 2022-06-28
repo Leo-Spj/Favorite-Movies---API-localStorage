@@ -1,0 +1,50 @@
+
+.img_pelicula-general{
+    width: 100%;
+}
+.pelicula_general_p{
+    aspect-ratio: 4/7.5;
+    
+
+    .img_pelicula-general{
+        aspect-ratio: 7/10;
+        
+
+        overflow: hidden;
+    }
+    
+    .nombre_p_particular {
+        color: $humo;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        body.modo_claro &{
+            color: $negro_claro_2
+        }
+    }
+    
+}
+.foto_caratula_peli{
+    position: relative;
+}
+.bxs-star{
+    color: $amarillo;
+
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+
+    /* From https://css.glass */
+    background: rgba(0, 0, 0, 0.43);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(6.4px);
+    -webkit-backdrop-filter: blur(6.4px);
+}
+
+// botones de corazon
+.corazon{
+    color: $rojo;
+    cursor: pointer;
+    font-size: 20px;
+}

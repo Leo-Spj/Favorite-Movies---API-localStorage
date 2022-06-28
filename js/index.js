@@ -1,12 +1,13 @@
 
     const cargarPeliculas = async() => {
         try{
-
+// medidor 1 de tiempo de peticion al servidor
 var t0 = performance.now();
 
             const respuesta = await fetch(`https://api.themoviedb.org/3/movie/popular?api_key=276e470698d68800db5697223acb8a64&language=es-ES`);
 
 var t1 = performance.now();
+// medidor 2 de tiempo de peticion al servidor
 var tiempo = t1-t0; 
 console.log("Tiempo top-carrusel: "+tiempo+"ms")  
 
@@ -58,7 +59,7 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
                     margin:10,
                     autoplay:true,
                     nav:true,
-                    autoplayTimeout:3000,
+                    autoplayTimeout:1700,
                     
                     // mediaQueries:
                     responsive:{
@@ -87,6 +88,46 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
                     }                    
                 });
             });
+            
+            
+            // progando grid bootstrap
+            const peliculas_generales = document.querySelector("#peliculas_generales");
+            for(let i = 0; i < 20; i++ ){
+                let div_p_general = document.createElement("div");
+                        div_p_general.classList.add("col-4");
+                        div_p_general.classList.add("col-sm-3");
+                        div_p_general.classList.add("col-md-3");
+                        div_p_general.classList.add("col-lg-2");
+                        div_p_general.classList.add("col-xl-2");
+
+                peliculas_generales.appendChild(div_p_general)
+
+                div_p_general.innerHTML = `
+                
+                    <div class="caja-item pelicula_general_p" > 
+
+                    <div class="foto_caratula_peli">
+                        <i class='bx bxs-star'>${top_carrusel_themoviedb[i].voto_promedio}</i>
+                        <img class="img_pelicula-general" src="https://image.tmdb.org/t/p/w500/${top_carrusel_themoviedb[i].poster}" alt="">
+                    </div>
+                              
+                        <div class="nombre_p_particular">${top_carrusel_themoviedb[i].nombre}</div>
+                        <div 
+
+                        <div class="d-flex justify-content-center">
+                            <i class='bx bx-heart corazon' ></i>
+                            <i class='bx bxs-heart corazon' ></i>
+                        </div>
+                    
+                    </div>
+
+                `;
+
+            }
+
+
+
+
 
             // tipos de errores:
             }else if(respuesta.status === 401){
@@ -125,8 +166,12 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
     const modo = document.querySelector("#switch");
     modo.onclick =function(){
         document.body.classList.toggle("modo_claro");
-        modo.classList.toggle("activo")
+        modo.classList.toggle("activo");
     } 
+
+    //boton corazon:
+
+
     
    
     

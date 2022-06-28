@@ -22,7 +22,9 @@
 }
 
 // OWL carrusel
-.titulo_carrusel_destacadas{
+
+.texto{
+    // global
     color: $humo;
     font-size: 17px;
     body.modo_claro &{
@@ -43,3 +45,15 @@
         }
 
 
+
+
+
+.linea{
+ 
+    border-top: 1px solid $humo;
+    height: 1px;
+    max-width: 100%;
+    padding: 10px;
+    margin: 20px auto 0 auto;
+    
+}

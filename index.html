@@ -31,7 +31,7 @@
 
     <title>CoderPelis</title>
 </head>
-<body class="body">
+<body class="body" onload="al_cargar()">
 
     <header>        
     <!-- no poner nada, se rompe todo xd-->
@@ -66,10 +66,11 @@
                 
                 <div class="col-9 seccion_busqueda">
 
-    <!-- barra de busqueda -->
-                    <input type="text" name="" id="" class="buscar_input" placeholder="">
+    <!-- boton Peliculas Favorita -->
+    <div class="d-flex justify-content-center"><button id="boton_favoritos" class="boton_favoritos"  >Peliculas Favoritas <i class='bx bxs-heart corazon' ></i> </button>
+    
+    </div>
                     
-                    <i class='bx bx-search bx-rotate-90' ></i>
                     
                 </div>
 
@@ -80,15 +81,45 @@
                   
         </div>
         
+        <!-- Peliculas favoritas -->
+        <div id="desaparecer_favoritas" class="">
+            <div id="seccion_favoritas" class=" seccion_favoritas container-sm d-flex justify-content-center">
+                
+
+                <table id="tabla" class="tabla table table-responsive" border="1" cellpadding="1" cellspacing="0"  >
+            
+                    <thead>
+                        <tr class="texto_claro">
+                            <!-- <th class="columna_id">FOTO</th> -->
+                            <th class="columna_nombre">PELICULA</th>
+                            <!-- <th class="columna_apellido">TEAM</th> -->
+                            <th class="columna_aliminar"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="alumnos_impresos" >
+        
+                            <!-- aquí estarán los alumnos -->
+        
+                    </tbody>          
+        
+                </table>
+
+
+                
+            </div>
+            
+        </div>
+
+
+
 
         <!-- seccion carrusel OWL -jquery -->
-
         <div class="container-xxl d-flex ">
             
             
             <div class="col-12">
                 <div class="d-flex justify-content-center align-items-center caja-titulo-carrusel">
-                    <h2 class="texto"><strong>Peliculas Destacadas</strong></h2>
+                    <h2 class=" texto"><strong>Peliculas Destacadas</strong></h2>
                 </div>
 
                 <div id="contenedor_carrusel_owl"></div>
@@ -102,7 +133,7 @@
         <div class=" container-xxl separador-1 linea"></div>
 
         <!-- mas peliculas en lista general -->
-        <div class="container-xxl d-flex justify-content-center"><h2 class="texto"><strong>+ Peliculas</strong></h2></div>
+        <div class=" container-xxl d-flex justify-content-center"><h2 class="texto"><strong>+ Peliculas</strong></h2></div>
         <div class="container-xxl ">
     
     
@@ -137,3 +168,15 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
 </html>
+
+
+
+
+
+
+<button id="${top_carrusel_themoviedb[i].id}" class="boton_agregar" name="" onClick="corazon_click(this.id, "${top_carrusel_themoviedb[i].nombre}">
+    
+                                <i class='bx bx-heart corazon' ></i>
+                                <i class='bx bxs-heart corazon' ></i>
+
+</button>

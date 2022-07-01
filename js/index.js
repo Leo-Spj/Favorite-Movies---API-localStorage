@@ -19,7 +19,7 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
     
                 datos.results.forEach(pelicula => {
     
-                    top_carrusel_themoviedb.push(new informacion_peliculas(pelicula.title, pelicula.vote_average, pelicula.vote_count, pelicula.poster_path));
+                    top_carrusel_themoviedb.push(new informacion_peliculas(pelicula.title, pelicula.vote_average, pelicula.vote_count, pelicula.poster_path, pelicula.id));
     
                 });
     
@@ -102,6 +102,7 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
 
                 peliculas_generales.appendChild(div_p_general)
 
+                let nombre = `${top_carrusel_themoviedb[i].nombre}`;
                 div_p_general.innerHTML = `
                 
                     <div class="caja-item pelicula_general_p" > 
@@ -115,8 +116,14 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
                         <div 
 
                         <div class="d-flex justify-content-center">
-                            <i class='bx bx-heart corazon' ></i>
-                            <i class='bx bxs-heart corazon' ></i>
+
+                            <button id="${top_carrusel_themoviedb[i].id}" name="${top_carrusel_themoviedb[i].nombre}" class="boton_agregar" onClick="corazon_click(this.id, this.name)">
+    
+                                <i class='bx bx-heart corazon' ></i>
+                                <i class='bx bxs-heart corazon' ></i>
+
+                            </button>
+
                         </div>
                     
                     </div>
@@ -151,11 +158,12 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
 
     class informacion_peliculas {
         
-        constructor (nombre, voto_promedio, recuento_votos, poster ){
+        constructor (nombre, voto_promedio, recuento_votos, poster, id ){
             this.nombre = nombre;
             this.voto_promedio = voto_promedio;
             this.recuento_votos = recuento_votos;
             this.poster = poster;
+            this.id = id;
         }
     }
     const top_carrusel_themoviedb = [ ];
@@ -169,48 +177,77 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
         modo.classList.toggle("activo");
     } 
 
-    //boton corazon:
+  
+// ------------------------------------------------
+// Peliculas favoritas:
+
+class contruc_lista_corazones {
+        
+    constructor (id, nombre){
+        this.id = id;
+        this.nombre = nombre;
+    }
+}
+const lista_corazones = [ ];
 
 
-    
-   
-    
+function corazon_click(id, nombre){
+    console.log(id , nombre);
+    document.getElementById(`${id}`).classList.add("estado_guardado")
 
-    
-    
+    let comprobar = lista_corazones.some(x => x.id === id )
+    if (comprobar){
+        
+        document.getElementById(`${id}`).classList.toggle("estado_guardado");
 
+        let posicion = lista_corazones.findIndex(x => x.id === `${id}` );
+        lista_corazones.splice(posicion, 1);
+        console.log("Se eliminó");
 
+        // eliminar del storage
+        sessionStorage.removeItem(id)
 
+        
 
+    }else{
+        console.log("Entró a lista")
 
+        // se puede eliminar, solo para corroborar
+        lista_corazones.push(new contruc_lista_corazones(id, nombre))
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        ad_Peli(id);
+    }
 
 
+}
+const ad_Peli = async(id) => {
+    try{
+        let devolver_peli = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=276e470698d68800db5697223acb8a64&language=es-ES`).then( (resp)=>resp.json()).then(
+            (data)=>{
+                console.log(data)
+                const json = JSON.stringify(data)
+                
+                sessionStorage.setItem(id, json)
+            }
+        )      
+        
+    }catch{
+        console.log("no se encontro link")
+    }
+};
 
 
+function al_cargar(){
 
+    if(sessionStorage.length === 0){
 
-
-
-
-
-
+    }else{
+        sessionStorage.forEach( key => {
+            let retornar = json.parse(key)
+            console.log(retornar)
+        });
+    }
+    }
 
 
 

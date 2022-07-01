@@ -1,0 +1,16 @@
+// Peliculas favoritas
+.texto_claro{
+    color: $humo;
+    body.modo_claro &{
+        color: $negro_claro_2
+    }
+}
+.texto_oscuro{
+    color: $negro_claro_2;
+    body.modo_claro &{
+        color: $humo
+    }
+}
+
+
+

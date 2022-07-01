@@ -43,8 +43,30 @@
 }
 
 // botones de corazon
-.corazon{
-    color: $rojo;
-    cursor: pointer;
-    font-size: 20px;
+
+.boton_agregar{
+    background-color: transparent;
+    border: none;
 }
+
+    // sin pintar
+    .bx-heart{
+        cursor: pointer;
+        font-size: 20px;
+        color: $rojo;
+        button.estado_guardado &{
+            display: none;
+        }
+        
+    }
+    // pintado
+    .bxs-heart{
+        cursor: pointer;
+        font-size: 20px;
+        color: $rojo;
+        display: none;
+        button.estado_guardado &{
+            display: block;
+        }
+    }
+

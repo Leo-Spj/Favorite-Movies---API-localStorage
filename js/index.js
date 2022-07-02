@@ -188,66 +188,135 @@ class contruc_lista_corazones {
         this.nombre = nombre;
     }
 }
-const lista_corazones = [ ];
+
+
+
+if(sessionStorage.getItem("lista_corazones")){
+    console.log("lista_corazones: listo antes de la precarga")
+
+    
+    obtener_convertir_storage()
+    
+} else{    
+    lista_corazones = [];    
+    
+    subir_storage_actualizado(lista_corazones);
+    function subir_storage_actualizado(lista_corazones){
+        let asignar = JSON.stringify(lista_corazones)
+        sessionStorage.setItem("lista_corazones", asignar)
+    }
+}
+function obtener_convertir_storage(){
+    let session_storage = sessionStorage.getItem("lista_corazones")
+    let json_parse = JSON.parse(session_storage)
+
+    lista_corazones = json_parse
+    return lista_corazones
+};
+function subir_storage_actualizado(lista_corazones){
+    let asignar = JSON.stringify(lista_corazones)
+    sessionStorage.setItem("lista_corazones", asignar)
+};
+
 
 
 function corazon_click(id, nombre){
     console.log(id , nombre);
     document.getElementById(`${id}`).classList.add("estado_guardado")
 
-    let comprobar = lista_corazones.some(x => x.id === id )
-    if (comprobar){
+    lista_corazones = obtener_convertir_storage();
+
+    let posicion = lista_corazones.indexOf(id) ; 
+
+    if (posicion !== -1){
         
         document.getElementById(`${id}`).classList.toggle("estado_guardado");
 
-        let posicion = lista_corazones.findIndex(x => x.id === `${id}` );
-        lista_corazones.splice(posicion, 1);
+        lista_corazones = obtener_convertir_storage();        
+        lista_corazones.splice(posicion , 1);
         console.log("Se eliminó");
 
-        // eliminar del storage
-        sessionStorage.removeItem(id)
+        // actualizar storage, borrar lo antiguo:
+        sessionStorage.removeItem("lista_corazones");
+        // convertir a string con funcion:
+        subir_storage_actualizado(lista_corazones);
 
-        
+  
+        // eliminar particularmente del storage
+        sessionStorage.removeItem(id)
+  
 
     }else{
-        console.log("Entró a lista")
+        
+
 
         // se puede eliminar, solo para corroborar
-        lista_corazones.push(new contruc_lista_corazones(id, nombre))
+        lista_corazones.push(new contruc_lista_corazones(id, nombre));
 
-        ad_Peli(id);
+
+        
+        const ad_Peli = async(id) => {
+            try{
+                await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=276e470698d68800db5697223acb8a64&language=es-ES`).then( (resp)=>resp.json()).then(
+                    (data)=>{
+                        console.log(data)
+                        const json = JSON.stringify(data);
+                        sessionStorage.setItem(id, json);
+                        console.log("Entró a lista");
+
+
+                        lista_corazones = obtener_convertir_storage();
+                        lista_corazones.push(id);
+
+                        // actualizar storage, borrar lo antiguo:
+                        sessionStorage.removeItem("lista_corazones");
+                        // actualizar, convertir a string con funcion:
+                        subir_storage_actualizado(lista_corazones);
+
+
+
+                    }
+                )   
+            }catch{
+                console.log("no se encontro link")
+            }
+        };
+        ad_Peli(id)
+
+       
     }
 
 
 }
-const ad_Peli = async(id) => {
-    try{
-        let devolver_peli = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=276e470698d68800db5697223acb8a64&language=es-ES`).then( (resp)=>resp.json()).then(
-            (data)=>{
-                console.log(data)
-                const json = JSON.stringify(data)
-                
-                sessionStorage.setItem(id, json)
-            }
-        )      
-        
-    }catch{
-        console.log("no se encontro link")
-    }
-};
 
 
+
+
+function actualizar_colores(){    
+    lista_corazones = obtener_convertir_storage();
+    lista_corazones.forEach(ID =>{
+        let pintar = document.getElementById(ID)
+        pintar.classList.add("estado_guardado")
+    })        
+    
+}
+
+
+
+/*
+function colores_corazon_array_json(id){
+    let destructurando = JSON.parse("ID_peli")
+    console.log(destructurando)
+}
+*/
+
+// cargar al iniciar la pagina, está dentro del body-html
 function al_cargar(){
 
-    if(sessionStorage.length === 0){
-
-    }else{
-        sessionStorage.forEach( key => {
-            let retornar = json.parse(key)
-            console.log(retornar)
-        });
-    }
-    }
+   console.log("carga desde el body")
+   
+   actualizar_colores()
+}
 
 
 

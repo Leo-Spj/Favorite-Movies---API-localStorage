@@ -133,6 +133,7 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
             }
 
 
+            actualizar_colores()
 
 
 
@@ -310,13 +311,6 @@ function colores_corazon_array_json(id){
 }
 */
 
-// cargar al iniciar la pagina, está dentro del body-html
-function al_cargar(){
-
-   console.log("carga desde el body")
-   
-   actualizar_colores()
-}
 
 
 

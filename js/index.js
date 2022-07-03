@@ -102,12 +102,11 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
 
                 peliculas_generales.appendChild(div_p_general)
 
-                let nombre = `${top_carrusel_themoviedb[i].nombre}`;
                 div_p_general.innerHTML = `
                 
                     <div class="caja-item pelicula_general_p" > 
 
-                    <div class="foto_caratula_peli">
+                    <div class=" foto_caratula_peli">
                         <i class='bx bxs-star'>${top_carrusel_themoviedb[i].voto_promedio}</i>
                         <img class="img_pelicula-general" src="https://image.tmdb.org/t/p/w500/${top_carrusel_themoviedb[i].poster}" alt="">
                     </div>
@@ -120,7 +119,7 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
                             <button id="${top_carrusel_themoviedb[i].id}" name="${top_carrusel_themoviedb[i].nombre}" class="boton_agregar" onClick="corazon_click(this.id, this.name)">
     
                                 <i class='bx bx-heart corazon' ></i>
-                                <i class='bx bxs-heart corazon' ></i>
+                                <i class='bx bxs-heart corazon corazon_pintado' ></i>
 
                             </button>
 
@@ -152,7 +151,8 @@ console.log("Tiempo top-carrusel: "+tiempo+"ms")
             
         }
     }
-    
+
+
     cargarPeliculas();
 
 
@@ -194,7 +194,6 @@ class contruc_lista_corazones {
 
 if(sessionStorage.getItem("lista_corazones")){
     console.log("lista_corazones: listo antes de la precarga")
-
     
     obtener_convertir_storage()
     
@@ -303,13 +302,6 @@ function actualizar_colores(){
 }
 
 
-
-/*
-function colores_corazon_array_json(id){
-    let destructurando = JSON.parse("ID_peli")
-    console.log(destructurando)
-}
-*/
 
 
 

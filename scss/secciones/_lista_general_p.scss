@@ -52,7 +52,7 @@
     // sin pintar
     .bx-heart{
         cursor: pointer;
-        font-size: 20px;
+        font-size: 23px;
         color: $rojo;
         button.estado_guardado &{
             display: none;
@@ -60,13 +60,41 @@
         
     }
     // pintado
-    .bxs-heart{
+    .corazon_pintado{
         cursor: pointer;
-        font-size: 20px;
+        font-size: 23px;
         color: $rojo;
         display: none;
+        
         button.estado_guardado &{
             display: block;
         }
+        
     }
+    .corazon{
+        font-size: 23px;
+        color: $rojo;
+    }
+    .boton_favoritos{
+        background-color: #4CAF50; /* Green */
+        border-radius: 10px;
+        border: none;
+        color: $humo;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 22px        
+    }
+    .boton_favoritos:hover {
+        // generado por web:
+        box-shadow: 0 3px 16px 0 $humo, 0 10px 10px 0 rgba(0,0,0,0.19);
+
+        body.modo_claro &{
+            // generado por web:
+        box-shadow: 0 3px 16px 0 rgba(0,0,0,0.24), 0 10px 10px 0 rgba(0,0,0,0.19);
+        }
+
+    }
+    
 

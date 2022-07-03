@@ -28,9 +28,15 @@
     top: 100px;
     color: $humo;
     font-size: 55px;
-
+    
     body.modo_claro &{
         color: $negro_claro_1;
+    }
+}
+.titulo_sombra{
+    text-shadow: -1px -1px 11px rgba(150, 75, 148, 1);
+    body.modo_claro &{
+        text-shadow: -1px -1px 11px rgba(0, 0, 0, 0.65);
     }
 }
 
@@ -98,11 +104,11 @@ button.switch{
     position: relative;
 }
 
-.buscar_input{
-    font-size: 18px;
+.favoritos{
+    font-size: 20px;
     color: $humo;
-    width: 100%; 
-    padding-left: 40px;
+    width: 170px;
+    
    
     height: 45px;    
 

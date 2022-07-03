@@ -60,6 +60,11 @@ main {
   body.modo_claro .logo_texto {
     color: #242424; }
 
+.titulo_sombra {
+  text-shadow: -1px -1px 11px #964b94; }
+  body.modo_claro .titulo_sombra {
+    text-shadow: -1px -1px 11px rgba(0, 0, 0, 0.65); }
+
 button.switch {
   cursor: pointer;
   top: 70px;
@@ -100,11 +105,10 @@ button.switch {
 .seccion_busqueda {
   position: relative; }
 
-.buscar_input {
-  font-size: 18px;
+.favoritos {
+  font-size: 20px;
   color: #E7E5E5;
-  width: 100%;
-  padding-left: 40px;
+  width: 170px;
   height: 45px;
   font-family: 'Josefin Sans', sans-serif;
   background: rgba(255, 255, 255, 0.25);
@@ -113,7 +117,7 @@ button.switch {
   -webkit-backdrop-filter: blur(4px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18); }
-  body.modo_claro .buscar_input {
+  body.modo_claro .favoritos {
     color: #404040; }
 
 .separador-1 {
@@ -199,18 +203,39 @@ div.owl-nav {
 
 .bx-heart {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 23px;
   color: #c00b1e; }
   button.estado_guardado .bx-heart {
     display: none; }
 
-.bxs-heart {
+.corazon_pintado {
   cursor: pointer;
-  font-size: 20px;
+  font-size: 23px;
   color: #c00b1e;
   display: none; }
-  button.estado_guardado .bxs-heart {
+  button.estado_guardado .corazon_pintado {
     display: block; }
+
+.corazon {
+  font-size: 23px;
+  color: #c00b1e; }
+
+.boton_favoritos {
+  background-color: #4CAF50;
+  /* Green */
+  border-radius: 10px;
+  border: none;
+  color: #E7E5E5;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px; }
+
+.boton_favoritos:hover {
+  box-shadow: 0 3px 16px 0 #E7E5E5, 0 10px 10px 0 rgba(0, 0, 0, 0.19); }
+  body.modo_claro .boton_favoritos:hover {
+    box-shadow: 0 3px 16px 0 rgba(0, 0, 0, 0.24), 0 10px 10px 0 rgba(0, 0, 0, 0.19); }
 
 .pseudo-footer {
   min-height: 100px; }

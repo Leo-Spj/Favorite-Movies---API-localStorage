@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+ 
     <!-- Safari Webkit -->
     <meta  name="theme-color" content="#242424">
 
@@ -48,7 +48,7 @@
             <div class="container sec_2">
     <!-- Titulo de Página -->
                 <h1 class="logo_texto">
-                    <strong>CoderPelis</strong>
+                    <strong class="titulo_sombra">CoderPelis</strong>
                 </h1>
 
     <!-- Boton modo Oscuro/Claro -->
@@ -68,7 +68,10 @@
                 <div class="col-9 seccion_busqueda">
 
     <!-- boton Peliculas Favorita -->
-    <div class="d-flex justify-content-center"><button id="boton_favoritos" class="boton_favoritos"  >Peliculas Favoritas <i class='bx bxs-heart corazon' ></i> </button>
+    <div class="d-flex justify-content-center align-items-center">
+        <button id="boton_favoritos" class="favoritos">
+            <strong>Mis</strong> <i class='bx bxs-heart corazon' ></i>
+        </button>
     
     </div>
                     
@@ -87,27 +90,45 @@
             <div id="seccion_favoritas" class=" seccion_favoritas container-sm d-flex justify-content-center">
                 
 
-                <table id="tabla" class="tabla table table-responsive" border="1" cellpadding="1" cellspacing="0"  >
+                <table id="tabla" class="tabla table table-responsive table-dark" border="1" cellpadding="1" cellspacing="0"  >
             
-                    <thead>
-                        <tr class="texto_claro">
-                            <!-- <th class="columna_id">FOTO</th> -->
-                            <th class="columna_nombre">PELICULA</th>
-                            <!-- <th class="columna_apellido">TEAM</th> -->
-                            <th class="columna_aliminar"></th>
+                    <tbody>
+                        
+                        <tr>
+                          <th scope="row">1</th>
+                          <td>Foto</td>
+                          <td>
+                            <div class="container d-flex ">
+                                <h1>asd</h1>
+                                <h1>asd</h1>
+                                <h1>asd</h1>
+
+                            </div>
+                          </td>
+                          
                         </tr>
-                    </thead>
-                    <tbody id="alumnos_impresos" >
-        
-                            <!-- aquí estarán los alumnos -->
-        
-                    </tbody>          
+
+                        <tr>
+                          <th scope="row">2</th>
+                          <td>Foto</td>
+                          <td>the Bird</td>
+                          
+                        </tr>
+                        
+                        <tr>
+                          <th scope="row">3</th>
+                          <td>Foto</td>
+                          <td>the Bird</td>
+                          
+                        </tr>
+                      </tbody>         
         
                 </table>
 
 
                 
             </div>
+            <div class="separador-1"></div>
             
         </div>
 
@@ -147,10 +168,6 @@
             
         </div>
     
-
-       
-
-        
     </main>
 
 
@@ -159,7 +176,8 @@
     <!-- OWL  para carrusel de peliculas-->
     <script src="owl-carrusel-jquery/jquery.min.js"></script>
     <script src="owl-carrusel-jquery/owl.carousel.min.js"></script>
-        
+    
+   
 
 
     <!-- Mi JavaScript -->

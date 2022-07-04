@@ -1,15 +1,15 @@
+// alerta:
 setTimeout(()=>{
     if(sessionStorage.getItem("alerta")){
         console.log("no alerta")
     }else{
-        let alerta = [1]
+        let alerta = []
         let astring = JSON.stringify(alerta)
         sessionStorage.setItem("alerta", astring)
         
         Swal.fire('Agrega peliculas 👉🏽 ❤️')
     }
 },3000)
-
 
 
 
@@ -188,13 +188,46 @@ const top_carrusel_themoviedb = [ ];
 const modo = document.querySelector("#switch");
 modo.onclick =function(){
    
-    document.body.classList.toggle("modo_claro");
-    modo.classList.toggle("activo");
+    if(sessionStorage.getItem("modo_claro")){
+        sessionStorage.removeItem("modo_claro")
 
-    // tabla:
-    let tabla = document.getElementById("tabla");
-    tabla.classList.toggle("table-dark")
+        document.body.classList.toggle("modo_claro");
+        modo.classList.toggle("activo");
+        // tabla:
+        let tabla = document.getElementById("tabla");
+        tabla.classList.toggle("table-dark")
+
+    }else{
+        let modo_C_O = []
+        let string_d = JSON.stringify(modo_C_O)
+        sessionStorage.setItem("modo_claro", string_d)
+        
+        document.body.classList.toggle("modo_claro");
+        modo.classList.toggle("activo");
+        // tabla:
+        let tabla = document.getElementById("tabla");
+        tabla.classList.toggle("table-dark")
+
+    }
 } 
+claro_oscuro()
+function claro_oscuro(){
+    if(sessionStorage.getItem("modo_claro")){
+        
+
+        document.body.classList.toggle("modo_claro");
+        modo.classList.toggle("activo");
+        // tabla:
+        let tabla = document.getElementById("tabla");
+        tabla.classList.toggle("table-dark")
+
+    }else{
+
+    }
+}
+
+
+// agregando condicion al storage:
 
   
 // ------------------------------------------------

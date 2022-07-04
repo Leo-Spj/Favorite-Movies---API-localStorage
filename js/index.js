@@ -1,3 +1,17 @@
+setTimeout(()=>{
+    if(sessionStorage.getItem("alerta")){
+        console.log("no alerta")
+    }else{
+        let alerta = [1]
+        let astring = JSON.stringify(alerta)
+        sessionStorage.setItem("alerta", astring)
+        
+        Swal.fire('Agrega peliculas 👉🏽 ❤️')
+    }
+},3000)
+
+
+
 
 const cargarPeliculas = async() => {
     try{
@@ -171,16 +185,9 @@ const top_carrusel_themoviedb = [ ];
   
 
 // Boton del modo OSCURO/CLARO:
-
-if(sessionStorage.getItem("modo_claro")){
-        
-}
-
 const modo = document.querySelector("#switch");
 modo.onclick =function(){
-    if(sessionStorage.getItem("modo_claro")){
-
-    }
+   
     document.body.classList.toggle("modo_claro");
     modo.classList.toggle("activo");
 

@@ -133,6 +133,9 @@ button.switch {
   body.modo_claro .texto_oscuro {
     color: #E7E5E5; }
 
+.desaparecer {
+  display: none; }
+
 .carousel-caption {
   background: rgba(0, 0, 0, 0.2);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);

@@ -1,11 +1,11 @@
 // alerta:
 setTimeout(()=>{
-    if(sessionStorage.getItem("alerta")){
+    if(localStorage.getItem("alerta")){
         console.log("no alerta")
     }else{
         let alerta = []
         let astring = JSON.stringify(alerta)
-        sessionStorage.setItem("alerta", astring)
+        localStorage.setItem("alerta", astring)
         
         Swal.fire('Agrega peliculas 👉🏽 ❤️')
     }
@@ -243,7 +243,7 @@ class contruc_lista_corazones {
 
 
 
-if(sessionStorage.getItem("lista_corazones")){
+if(localStorage.getItem("lista_corazones")){
     console.log("lista_corazones: listo antes de la precarga")
     
     obtener_convertir_storage("lista_corazones")
@@ -254,11 +254,11 @@ if(sessionStorage.getItem("lista_corazones")){
     subir_storage_actualizado(lista_corazones);
     function subir_storage_actualizado(lista_corazones){
         let asignar = JSON.stringify(lista_corazones)
-        sessionStorage.setItem("lista_corazones", asignar)
+        localStorage.setItem("lista_corazones", asignar)
     }
 }
 function obtener_convertir_storage(lista_corazones){
-    let session_storage = sessionStorage.getItem(lista_corazones)
+    let session_storage = localStorage.getItem(lista_corazones)
     let json_parse = JSON.parse(session_storage)
 
     lista_corazones = json_parse
@@ -266,7 +266,7 @@ function obtener_convertir_storage(lista_corazones){
 };
 function subir_storage_actualizado(lista_corazones){
     let asignar = JSON.stringify(lista_corazones)
-    sessionStorage.setItem("lista_corazones", asignar)
+    localStorage.setItem("lista_corazones", asignar)
 };
 
 
@@ -289,13 +289,13 @@ function corazon_click(id, nombre){
         console.log("Se eliminó");
 
         // actualizar storage, borrar lo antiguo:
-        sessionStorage.removeItem("lista_corazones");
+        localStorage.removeItem("lista_corazones");
         // convertir a string con funcion:
         subir_storage_actualizado(lista_corazones);
 
   
         // eliminar particularmente del storage
-        sessionStorage.removeItem(id)
+        localStorage.removeItem(id)
 
 
         imprimir_tabla();
@@ -316,7 +316,7 @@ function corazon_click(id, nombre){
                     (data)=>{
                         console.log(data)
                         const json = JSON.stringify(data);
-                        sessionStorage.setItem(id, json);
+                        localStorage.setItem(id, json);
                         console.log("Entró a lista");
 
 
@@ -324,7 +324,7 @@ function corazon_click(id, nombre){
                         lista_corazones.push(id);
 
                         // actualizar storage, borrar lo antiguo:
-                        sessionStorage.removeItem("lista_corazones");
+                        localStorage.removeItem("lista_corazones");
                         // actualizar, convertir a string con funcion:
                         subir_storage_actualizado(lista_corazones);
 

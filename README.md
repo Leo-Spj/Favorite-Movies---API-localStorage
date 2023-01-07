@@ -6,7 +6,7 @@ ENTREGA DEL PROYECTO FINAL
 Formato: 
 Página HTML y código fuente en JavaScript. Debe identificar el apellido del alumno/a en el nombre de archivo comprimido por “ProyectoFinal+Apellido”
 
->>Consigna:
+Consigna:
 Presentarás la página web interactiva en JavaScript que vienes trabajando a lo largo del curso. La misma debe simular distintos procesos. Un “simulador” es un programa que soluciona ciertas tareas, y proporciona al usuario información de valor, de forma coherente y prolija. Utilizarás AJAX y JSON para obtener datos y diversas herramientas de JS como librerías, promises y asincronía para controlar eventos en la interfaz y producir animaciones en respuesta.
 
 >>Objetivos generales:
